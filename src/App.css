@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400|Inter:600|Montserrat:400,800');
 abbr {
 	text-decoration: none !important;
 	cursor: pointer !important; 
@@ -70,7 +71,6 @@ abbr {
   }
 
 
-@import url('https://fonts.googleapis.com/css?family=Inter:400|Inter:600|Open+Sans:500');
 
 * {
   font-family: "Inter", sans-serif !important;
@@ -176,11 +176,12 @@ a {
 
 
 .ico {
-  margin-top: 1rem !important;
+  margin-top: 1.3rem !important;
   z-index: 10 !important;
   display: inline !important;
   width: min-content !important;
   margin-left: -3rem !important;
+  
 }
 
 .w-33 {
@@ -244,23 +245,76 @@ form h1 {
   line-height: 0.5;
 }
 
-
 .book-search {
   border-radius: 2rem !important;
   border: 1px solid lightgray !important;
+  box-shadow: initial !important;
 
 }
 
-.book-search {
+.book-search[type="text"],
+.book-Search[type="file"],
+.book-searches {
+  border-radius: 0.5rem !important;
+  border: 1px solid lightgray !important;
   box-shadow: initial !important;
+  background: rgb(253, 251, 251) !important;
 }
 
 .zoom-14 {
-  zoom: 1.4;
+  zoom: 1.2;
 }
 
 
 label {
   cursor: default !important;
   user-select: none !important;
+}
+
+.forrm {
+  user-select: none;
+}
+
+.font {
+  font-size: 37px !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+.googleSocial {
+  zoom: 0.8 !important;
+  padding: 5px !important;
+}
+.social{
+  zoom: 1.2;
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+} 
+
+.social:hover {
+  scale: 1.1;
+}
+
+.social:active {
+  scale: 1.05;
+}
+.descP {
+  text-align: justify;
+  font-size: x-small;
+}
+
+.bg-k {
+  background: #374151 !important;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

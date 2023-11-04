@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { SignupComponent } from './SignupComponent'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
+import { LogUp } from './LogUp';
 
 export function Signup(){
     const nav = useNavigate();
@@ -18,7 +18,7 @@ export function Signup(){
 
     return (
         <div className="container">
-            <SignupComponent />
+            <LogUp />
         </div>
     )
 }

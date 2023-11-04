@@ -4,7 +4,6 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { Button, Navbar } from 'flowbite-react';
 import { useAuthState } from 'react-firebase-hooks/auth'; // If available
 import { auth } from "../config/firebase";
-import { useEffect } from 'react';
 
 export function MainLayout() {
   // Use the auth state from Firebase
@@ -25,10 +24,7 @@ export function MainLayout() {
               {!user ? (
                 <>
                   <Link to="/login">
-                    <Button className="btn btn-sm me-2">Login</Button>
-                  </Link>
-                  <Link to="/signup">
-                    <Button className="btn btn-sm me-5">Sign Up</Button>
+                    <Button className="btn btn-sm me-5">Login</Button>
                   </Link>
                 </>
               ) : null}
@@ -41,6 +37,12 @@ export function MainLayout() {
               <Navbar.Link className="mb-2 text-secondary" href="#">
                 <Link to="/books">Books</Link>
               </Navbar.Link>
+              <Navbar.Link className="mb-2 text-secondary" href="#">
+                <Link to="/profile">Profile</Link>
+              </Navbar.Link>
+              <Navbar.Link className="mb-2" href="#">
+                  <Link to="/test" className="text-logout">Test</Link>
+                </Navbar.Link>
               {user ? (
                 <Navbar.Link className="mb-2" href="#">
                   <Link to="/logout" className="text-logout">Logout</Link>

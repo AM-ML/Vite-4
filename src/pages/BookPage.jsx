@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { db } from '../config/firebase';
-import { collection, getDocs } from 'firebase/firestore';
 import { BookComponent } from './BookComponent';
 import { NotFound } from './NotFound';
 import { Helmet } from 'react-helmet';
@@ -11,13 +9,10 @@ export function BookPage() {
   const [BooksDB, setBooksDB] = useState([]);
   const [loading, setLoading] = useState(true); // Added loading state
   const { bookId } = useParams();
-  const BooksCollectionRef = collection(db, 'books');
 
   const getBooks = async () => {
     try {
-      const data = await getDocs(BooksCollectionRef);
-      const filteredData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      setBooksDB(filteredData);
+      setBooksDB(window.BooksDB);
     } catch (error) {
       console.error(error);
     } finally {

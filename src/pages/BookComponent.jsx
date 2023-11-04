@@ -55,9 +55,9 @@ export function BookComponent(props) {
             Download Book
           </a>
         </div>
-        <div className="col-8 pt-4">
+        <div className="col-8 pt-4 descPD">
           <h3>Description</h3>
-          <p className="indent-20">{formatDescription(desc)}</p>
+          <p className="indent-20 descP">{formatDescription(desc)}</p>
         </div>
       </div>
     </div>

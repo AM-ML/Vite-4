@@ -1,13 +1,11 @@
-import { getDocs, collection } from 'firebase/firestore';
 import { useParams, useNavigate } from 'react-router-dom';
-import { db, auth } from '../config/firebase';
+import { auth } from '../config/firebase';
 import { useEffect, useState } from 'react';
 import { Book } from './Book';
 import { LoadingEffect } from './LoadingEffect'; // You can create a LoadingEffect component as shown in a previous response.
 
 export function Author() {
   const { authName } = useParams();
-  const booksCollectionRef = collection(db, 'books');
   const [authBooks, setAuthBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const nav = useNavigate();
@@ -29,9 +27,7 @@ export function Author() {
   }, [nav]);
 
   const getBooks = async () => {
-    const data = await getDocs(booksCollectionRef);
-    const filteredData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-    const booksData = filteredData.filter((book) => book.author === authName);
+    const booksData = window.BooksDB.filter((book) => book.author === authName);
     setAuthBooks(booksData);
     setLoading(false); // Mark loading as false when the operation is complete
   };
