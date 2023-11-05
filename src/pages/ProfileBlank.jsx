@@ -5,7 +5,7 @@ export function ProfileBlank() {
   const nav = useNavigate();
   useEffect(() => {
     if(true)
-      nav("/test/dashboard")
+      nav("/profile/dashboard")
   })
   
   return (

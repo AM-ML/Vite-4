@@ -18,16 +18,16 @@ import { Author } from './pages/Author';
 import { UploadBook } from './pages/UploadBook';
 import { Search } from './pages/Search';
 import { collection, getDocs } from 'firebase/firestore';
-import { Profile } from './pages/Profile';
 import { BookLayout } from './pages/BookLayout';
-import { Test } from './pages/Test';
+import { Profile } from './pages/Profile';
 import { ProfileBlank } from './pages/ProfileBlank';
-import { ProfileDashboard } from './pages/ProfileDashboard';
 import { ProfileAccount } from './pages/ProfileAccount';
-import { ProfileViewsArticles } from './pages/ProfileViewsArticles' 
-import { ProfileViewsBooks } from './pages/ProfileViewsBooks' 
+import { ProfileViews } from './pages/ProfileViews' 
+import { ProfileDashboard } from './pages/ProfileDashboard' 
 import { ProfileUploadsBooks } from './pages/ProfileUploadsBooks'
 import { ProfileUploadsArticles } from './pages/ProfileUploadsArticles'
+import { Test } from './pages/Test';
+import { ProfileSales } from './pages/ProfileSales';
 function App() {
 
   const [BooksDB, setBooksDB] = useState([]);
@@ -75,15 +75,16 @@ function App() {
           <Route path="login" element={<Login />}/>
           <Route path="profile" element={<Profile />} />
           <Route path="signup" element={<Signup />}/>
-          <Route path="test" element={<Test />} >
+          <Route path="profile" element={<Profile />} >
             <Route index element={<ProfileBlank />} />
             <Route path="dashboard" element={<ProfileDashboard />} />
             <Route path="account" element={<ProfileAccount />} />
-            <Route path="views/books" element={<ProfileViewsBooks />} />
-            <Route path="views/articles" element={<ProfileViewsArticles />} />
+            <Route path="views" element={<ProfileViews />} />
             <Route path="uploads/books" element={<ProfileUploadsBooks />} /> 
             <Route path="uploads/articles" element={<ProfileUploadsArticles />} />
+            <Route path="sales" element={<ProfileSales />} />
           </Route>
+          <Route path="test" element={<Test />} />
           <Route path="logout" element={<Logout />}/>
           <Route path="*" element={<NotFound />}/>
         </Route>
