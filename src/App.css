@@ -4,7 +4,9 @@ abbr {
 	cursor: pointer !important; 
 	border: none !important;
   }
-
+#root {
+  margin-top: 1rem !important;
+}
 .book {
 	cursor: pointer !important;
 	color: black;
@@ -309,6 +311,9 @@ label {
 .bg-k {
   background: #374151 !important;
 }
+.text-k {
+  color: #374151 !important;
+}
 
 .tooltip {
   position: absolute;
@@ -333,7 +338,7 @@ label {
   background-color: #abc !important;
 }
 .color-18f{
-  border-radius: 10px !important;
+  border-radius: 5px !important;
   display: inline-block !important;
   background-color: #18f !important;
 }
@@ -371,8 +376,86 @@ label {
 
 .navig {
   position: absolute;
-  top: 7%;
+  top: 1%;
   left: -1%;
   padding-left: 1rem;
 }
 
+.small {
+  font-size: 11px !important;
+}
+
+.sideArts {
+  border-right: 1px solid lightgray;
+}
+
+
+.main-text {
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+.blue-border-bottom {
+  padding-bottom: 10px;
+  border-bottom: 5px solid #00C0F3;
+}
+
+.ch-14 {
+  display: inline-block;
+  width: 18ch !important;
+}
+
+.bg-pink {
+  bakground: #E9EAEB !important;
+}
+
+
+.hover-scale:hover {
+  scale: 1.06 !important;
+}
+
+.hover-scale:active {
+  scale: 1.1 !important;
+}
+
+.bg-none {
+  background-color: none !important;
+  background: transparent !important;
+  
+  box-shadow: none !important;
+}
+
+.min-100vh {
+  min-height: 100vh !important;
+}
+
+.w-ch {
+  display: inline-block !important;
+  width: 18ch !important;
+}
+
+.onhover-darken:hover{
+  filter: brightness(0.97) !important;
+}
+.onhover-darken-lg:hover {
+  filter: brightness(0.9) !important; 
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.recipe-author {
+  letter-spacing: 1px;
+}
+
+.hover-danger:hover {
+  color: #DC3545 !important;
+}
+
+.hover-cyan:hover {
+  color: #00C0F3 !important;
+}
+.hover-blue:hover {
+  color: #18f !important;
+}

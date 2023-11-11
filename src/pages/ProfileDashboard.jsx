@@ -41,7 +41,7 @@ export const Chart = (props) => {
   return <div className="row">
     <div className="col-6">
     <ResponsiveContainer minWidth="100%" minHeight="200px">
-        <PieChart width={400} height={200} style={{"margin-top": "0"}}>
+        <PieChart width={400} height={200} style={{"marginTop": "0"}}>
           <Pie className='p-0 m-0'
             data={data}
             cx="50%"
@@ -60,9 +60,9 @@ export const Chart = (props) => {
       </ResponsiveContainer>
     </div>
     <div className="col-3 pt-5 mt-5">
-      <div className="w-40px h-40px color-18f"></div> {props.v1 > props.v2? props.m1 : props.m2}
+      <p className="d-block w-max"><div className="w-40px h-40px color-18f"></div> {props.v1 > props.v2? props.v1 + " " + props.m1 : props.v2 + " " + props.m2}</p>
       <br />
-      <div className="w-40px h-40px color-abc mt-3"></div> {props.v1 > props.v2? props.m2: props.m1}
+      <p className="d-block w-max"><div className="w-40px h-40px color-abc mt-3"></div> {props.v1 > props.v2? props.v1 + " " + props.m2: props.v1 + " " + props.m1}</p>
     </div>
   </div>
 }

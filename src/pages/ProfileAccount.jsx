@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { Chart } from "./ProfileDashboard";
-
+import { DarkThemeToggle, Flowbite, Table } from 'flowbite-react';
 export function ProfileAccount() {
   const nav = useNavigate();
   const [currentUserEmail, setCurrentUserEmail] = useState(null);
@@ -39,33 +39,36 @@ export function ProfileAccount() {
   const Stats = () => {
     return (
       <div className="container">
-        <div className="row mt-3">
-          <table className="table table-light table-bordered p-3">
-            <tbody>
-              <tr>
-                <th className="p-3 table-primary-c">Email</th>
-                <td className="p-3">{currentUserEmail}</td>
-                <th className="m-0 p-0 centers table-primary-c">
-                  <button 
-                    className="btn btn-primary w-100 h-60px center"
-                    >
-                    <b>Edit</b>
-                  </button>
-                </th>
-              </tr>
-              <tr>
-                <th className="p-3 table-primary-c">Uploaded</th>
-                <td className="p-3">
-                  {userBooks.length == 1
-                    ? "1 book"
-                    : `${userBooks.length} books`}
-                </td>
-                <th className="p-3 text-center table-primary-c" colSpan={1}>
-                  0 articles
-                </th>
-              </tr>
-            </tbody>
-          </table>
+        <div className="row mt-3 m-auto">
+           <Table hoverable className="m-auto">
+             
+              <Table.Body className="divide-y">
+                <Table.Row className="bg-white text-dark p-0">
+                  <Table.Cell className="whitespace-nowrap font-medium text-center text-blue bg-light p-0">
+                    <b>Email</b>
+                  </Table.Cell>
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-600">
+                    {currentUserEmail}
+                  </Table.Cell>
+                  <Table.Cell>
+                    <button className="font-medium text-cyan-600 hover-scale dark:text-cyan-500">
+                      Edit
+                    </button>
+                  </Table.Cell>
+                </Table.Row>
+                <Table.Row className="bg-white text-dark">
+                  <Table.Cell className="whitespace-nowrap font-medium text-center text-blue bg-light">
+                    <b>Uploaded</b>
+                  </Table.Cell>
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-600">
+                    {userBooks.length == 1? "1 Book" : `${userBooks.length} Books`}
+                  </Table.Cell>
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-600">
+                    0 Articles
+                  </Table.Cell>
+                </Table.Row>
+              </Table.Body>
+            </Table>
         </div>
         <div className="row mt-5">
         <div className="col">
@@ -76,7 +79,7 @@ export function ProfileAccount() {
       </div>
 
       <div className="row mt-3">
-        <Chart v2={userBooks.length} m2="Books" v1={1} m1="Articles" />
+        <Chart v2={userBooks.length > 0? userBooks.length : 1 } m2="Books" v1={1} m1="Articles" />
       </div>
       </div>
     );
@@ -86,18 +89,22 @@ export function ProfileAccount() {
       <div className="container">
         <div className="row">
           <div className="col text-end pt-2">
-            <p>Verify your email:</p>
+            <p className="text-dark">Verify your email -></p>
           </div>
-          <div className="col">
-            <button className="btn btn-success">Verify Email</button>
+          <div className="col text-start pt-2">
+            <button className="font-medium hover:underline hover-scale dark:text-green-600 mb-3">
+              Verify
+            </button>
           </div>
         </div>
         <div className="row">
           <div className="col text-end pt-2">
             <p>Forgot your password?</p>
           </div>
-          <div className="col">
-            <button className="btn btn-primary">Reset Password</button>
+          <div className="col pt-2">
+           <button className="font-medium hover:underline hover-scale dark:text-blue-600 mb-3">
+              Reset Password
+            </button>
           </div>
         </div>
       </div>

@@ -25,9 +25,9 @@ export function BookComponent(props) {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1 className="text-capitalize text-blue">
-            {title} <br />
-            <Link to={`/books/author/${author}`} className="text-blue line-03">
+          <h1 className="text-capitalize text-blue"><b>
+            {title} </b><br />
+            <Link to={`/books/author/${author}`} className="text-k line-03">
               <h6>by {author}</h6>
             </Link>
           </h1>
@@ -55,8 +55,8 @@ export function BookComponent(props) {
             Download Book
           </a>
         </div>
-        <div className="col-8 pt-4 descPD">
-          <h3>Description</h3>
+        <div className="col-8 pt-0 descPD">
+          <h3><b>Description</b></h3>
           <p className="indent-20 descP">{formatDescription(desc)}</p>
         </div>
       </div>

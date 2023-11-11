@@ -19,7 +19,7 @@ export function Home() {
 		};
 	  }, [nav]);
 	return (
-		<div className="container">
+		<div className="container min-100vh">
 			<Helmet>
 				<title>InQuill</title>
 			</Helmet>
